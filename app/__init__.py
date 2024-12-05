@@ -5,11 +5,14 @@ from flask_jwt_extended import (
 )
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_migrate import Migrate
-import os
+import os, africastalking
 
 db = SQLAlchemy()
 migrate = Migrate()
 jwt = JWTManager()
+# Initialize Africa's Talking
+africastalking.initialize(username='sandbox', api_key='atsk_1a795404fcab5ac14bfa7a3d4d7fa0618b16b9bf0cc3c3803b2d4fd5da6632791628f237')
+sms = africastalking.SMS
 
 def create_app():
     app = Flask(__name__)
