@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout code
@@ -28,4 +28,4 @@ jobs:
 
       - name: Run Tests
         run: |
-          python -m unittest discover tests
+          python -m unittest discover test
